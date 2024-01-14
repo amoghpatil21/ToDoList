@@ -1,5 +1,16 @@
 var express = require("express");
 var usersRouter = require("./api/user/user.route");
+var app = express()
+app.use(express.json())
+
+require('dotenv').config();
+const mongoose = require("mongoose")
+mongoose.connect(process.env.MONGODB).then(()=>{
+  console.log('Data base connection Established');
+}).catch((error)=>{
+  console.log(error)
+  console.log('Error in connecting Mongodb')
+})
 
 var app = express();
 app.use((req, res, next) => {
