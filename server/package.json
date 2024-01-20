@@ -10,5 +10,10 @@
     "env": "^0.0.2",
     "express": "~4.16.1",
     "mongoose": "^8.0.4"
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
