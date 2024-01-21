@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { UsersComponent } from './user/user.component';
-import { AddUserComponent } from './add-user/add-user.component';
+import { EmployeesComponent } from './Employee/Employee.component';
+import { AddEmployeeComponent } from './add-Employee/add-Employee.component';
 
 @Component({
   selector: 'app-root',

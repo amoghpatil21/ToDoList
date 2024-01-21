@@ -1,5 +1,6 @@
 var express = require("express");
-var usersRouter = require("./api/user/user.route");
+var EmployeesRouter = require("./api/Employee/Employee.route");
+var UserRouter=require("./api/User/user.route");
 var app = express();
 require("dotenv").config();
 
@@ -21,7 +22,8 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
-app.use("/users", usersRouter);
+app.use("/employees", EmployeesRouter);
+app.use("/user",UserRouter);
 
 app.listen(3000, () => {
   console.log("listening on http://localhost:3000");
