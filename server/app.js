@@ -1,6 +1,6 @@
 var express = require("express");
 var EmployeesRouter = require("./api/Employee/Employee.route");
-var UserRouter=require("./api/User/user.route");
+var UserRouter = require("./api/User/user.route");
 var app = express();
 require("dotenv").config();
 
@@ -15,15 +15,18 @@ mongoose
     console.log("Error in connecting Mongodb");
   });
 
+app.use(express.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "*");
   res.header("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+}
   next();
 });
-app.use(express.json());
 app.use("/employees", EmployeesRouter);
-app.use("/user",UserRouter);
+app.use("/user", UserRouter);
 
 app.listen(3000, () => {
   console.log("listening on http://localhost:3000");

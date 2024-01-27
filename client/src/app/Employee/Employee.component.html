@@ -1,11 +1,11 @@
 <button type="button" class="btn btn-outline-dark" (click)="getEmployees()">Get Employees</button>
 <button (click)="goToAddEmployee()">Go to Add Employee</button>
-<ul>
+<ul style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
   @for (Employee of Employees; track Employee._id) {
   <li>
     {{ Employee.fname }}
     {{ Employee.lname }}
-    <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(Employee._id)">DEL</button>
+    <!-- <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(Employee._id)">DEL</button> -->
     <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(Employee._id)">DEL</button>
   </li>
   }
