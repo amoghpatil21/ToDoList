@@ -28,6 +28,7 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
         FormsModule,
         ReactiveFormsModule,
         RouterOutlet,
+        
     ],
     bootstrap: [AppComponent]
 })

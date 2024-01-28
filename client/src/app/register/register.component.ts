@@ -22,13 +22,14 @@ export class RegisterComponent {
       this.isLoading=true;
       this.http.post('http://localhost:3000/user/register', this.newUser).subscribe({
         next: (res: any) => {
-          this.isLoading
+          this.isLoading=false;
           console.log(res);
           this.newUser.email = '';
           this.newUser.password = '';
           
         },
         error: (err) => {
+          this.isLoading=false
           console.log(err);
         },
       })

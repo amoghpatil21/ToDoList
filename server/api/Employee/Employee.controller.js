@@ -19,6 +19,9 @@ exports.createEmployee = (req, res, next) => {
   const newEmployee = new EmployeeModel({
     fname: req.body.fname,
     lname: req.body.lname,
+    mobileno:req.body.mobileno,
+    email:req.body.email,
+    gender:req.body.gender, 
   });
   newEmployee
     .save()

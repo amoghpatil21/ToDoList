@@ -10,7 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditEmployeeComponent implements OnInit {
   Employee = {
     fname: '',
-    lname: ''
+    lname: '',
+    mobileno:'',
+    email:'',
+    gender:'',
   }
   isLoading=false;
 
@@ -33,6 +36,10 @@ export class EditEmployeeComponent implements OnInit {
         console.log('res', res);
         this.Employee.fname = res.fname;
         this.Employee.lname = res.lname;
+        this.Employee.mobileno = res.mobileno;
+        this.Employee.email = res.email;
+        this.Employee.gender = res.gender;
+
       },
       error: (error: any) => {
         this.isLoading=false;

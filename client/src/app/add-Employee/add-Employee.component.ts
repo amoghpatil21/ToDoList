@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-add-Employee',
   templateUrl: './add-Employee.component.html',
@@ -16,7 +17,11 @@ export class AddEmployeeComponent {
 
   newEmployee = {
     fname: '',
-    lname: '',  
+    lname: '', 
+    mobileno:'',
+    email:'',
+    gender:'',
+
   }
   createEmployee() {
     this.isLoading=true
@@ -26,6 +31,9 @@ export class AddEmployeeComponent {
         console.log(res);
         this.newEmployee.fname = '';
         this.newEmployee.lname = '';
+        this.newEmployee.mobileno = '';
+        this.newEmployee.email = '';
+        this.newEmployee.gender = '';
         
       },
       error: (err) => {

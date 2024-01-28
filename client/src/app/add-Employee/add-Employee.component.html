@@ -1,9 +1,41 @@
 @if (isLoading==false) {
-First Name : <input [(ngModel)]="newEmployee.fname" type="text" /><br />
-Last Name : <input [(ngModel)]="newEmployee.lname" type="text" /><br />
-<button type="button" class="btn btn-outline-success" (click)="createEmployee()">Submit</button><br />
-}@else{
-<h1>...Loading  </h1>
-}
-<button (click)="goToViewEmployees()">Go to view Employees</button> 
+    <div class="container p-4">
+        <div class="form-group">
+          <label>First Name</label>
+          <input [(ngModel)]="newEmployee.fname" type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input [(ngModel)]="newEmployee.lname" type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Mobile No.</label>
+          <input [(ngModel)]="newEmployee.mobileno" type="text" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input [(ngModel)]="newEmployee.email" type="text" class="form-control" />
+        </div>
+        <label >Gender:   </label>
+        <label style="margin: 2rem;" >
+        
+         <input [(ngModel)]="newEmployee.gender" type="radio" name="Gender" value="Male" >Male
+        </label>
+        
+        <label >
+         <input [(ngModel)]="newEmployee.gender" type="radio" name="Gender" value="Female">Female
+        </label><br>
+   
+        <button  type="button" class="btn btn-outline-success" (click)="createEmployee()">Submit</button><br><br>
+       
+<button type="button" (click)="goToViewEmployees()"class="btn btn-outline-secondary">Go to view Employees</button> 
 
+    </div>
+}
+@else{
+    <h1><div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>Loading  </h1>
+    }
+    
+    
