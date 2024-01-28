@@ -25,6 +25,7 @@ import { LoginComponent } from "./login/login.component";
         HttpClientModule, 
         FormsModule,
         ReactiveFormsModule,
+        RouterOutlet,
     ],
     bootstrap: [AppComponent]
 })

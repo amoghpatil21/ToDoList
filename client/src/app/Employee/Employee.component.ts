@@ -1,5 +1,5 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,12 +8,15 @@ import { Router } from '@angular/router';
   templateUrl: './Employee.component.html',
   styleUrl: './Employee.component.scss'
 })
-export class EmployeesComponent {
+export class EmployeesComponent implements OnInit {
 
   Employees: any = [];
 
   
   constructor(private http: HttpClient , private router:Router) {
+  }
+  ngOnInit(): void {
+      this.getEmployees();
   }
 
   getEmployees() {
