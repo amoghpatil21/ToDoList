@@ -30,10 +30,11 @@ exports.login = async (req, res, next) => {
     });
     const validateUser = await UserModel.findOne({email:req.body.email});
     if (validateUser) {
-      return res.status(200).json({
-        message: "Authorized User",
+    //    res.status(200).json({
+    //     message: "Valid User",
 
-      });
+    //   })
+    await console.log("Valid User")
       if(authorizeUser){
         return res.status(200).json({
             message: "Authorized User",
