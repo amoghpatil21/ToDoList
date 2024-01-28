@@ -1,6 +1,6 @@
 var express = require("express");
-var EmployeesRouter = require("./api/Employee/Employee.route");
-var UserRouter = require("./api/User/user.route");
+
+var TodoRouter =require("./api/todo/todo.route")
 var app = express();
 require("dotenv").config();
 
@@ -25,8 +25,8 @@ app.use((req, res, next) => {
 }
   next();
 });
-app.use("/employees", EmployeesRouter);
-app.use("/user", UserRouter);
+
+app.use("/todo",TodoRouter);
 
 app.listen(3000, () => {
   console.log("listening on http://localhost:3000");

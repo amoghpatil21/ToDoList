@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterComponent } from './register.component';
+import { TodoComponent } from './todo.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('TodoComponent', () => {
+  let component: TodoComponent;
+  let fixture: ComponentFixture<TodoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RegisterComponent]
+      declarations: [TodoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(TodoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,53 @@
+<h1 style="text-align: center;">Todo List</h1>
+
+<div class="container p-4" style="margin-right: 6rem;margin-left: 6rem;border: 0.1rem solid;border-radius: 1rem;border-color: rgb(152, 148, 144);">
+    <div class="form-group">
+        <input [(ngModel)]="newTask.task" type="text" class="form-control" placeholder="Task"  />
+        <button style="display: flex;float: right;margin-top: -2.3rem;" type="button" class="btn btn-outline-success" (click)="createTask()">+</button><br>
+      </div>
+      
+
+</div><br>
+
+<div class="m-6" style="margin-right: 6rem;margin-left: 6rem;">
+  
+    @if(isLoading==false){
+    <table class="table table-light " >
+      <thead >
+        <tr>
+          <th scope="col">...</th>
+          <th scope="col ">Tasks</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (Task of Tasks; track Task._id) {
+        <tr>
+          <th scope="row">{{ $index + 1 }}</th>
+          <td>{{ Task.task }}</td>
+          <td><input type="checkbox"></td>
+          
+          <td>
+            <button class="btn btn-danger" (click)="deleteTask(Task._id)">
+              DEL
+            </button>
+          
+          </td>
+          <td>
+            <button
+              [routerLink]="'/edit-todo/' + Task._id"
+              class="btn btn-warning"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>}
+    @else {
+      <h1>...Loading</h1>
+    }
+  </div><br>

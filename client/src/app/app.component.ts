@@ -3,10 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { EmployeesComponent } from './Employee/Employee.component';
-import { AddEmployeeComponent } from './add-Employee/add-Employee.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+
 @Component({
   selector: 'app-root',
   

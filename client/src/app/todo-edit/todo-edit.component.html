@@ -1,0 +1,15 @@
+@if (isLoading==false) {
+    <div class="container p-4">
+        <div class="form-group">
+          <label>Task</label>
+          <input [(ngModel)]="Tasks.task" type="text" class="form-control" />
+        </div><br>
+        
+      
+        <button style="margin-right: 2rem;" (click)="updateTask()" type="submit" class="btn btn-warning">Update</button>
+        <button routerLink="/todo" type="submit" class="btn btn-primary">Back</button>
+      </div>
+    }
+    @else {
+        <h1>...Loading</h1>
+    }
