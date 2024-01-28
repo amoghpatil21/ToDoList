@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   User:any=[];
+  isLoading=false;
 
   constructor(private http:HttpClient,private router:Router ){
   }
@@ -18,8 +19,10 @@ export class RegisterComponent {
       password:'',
     }
     register() {
+      this.isLoading=true;
       this.http.post('http://localhost:3000/user/register', this.newUser).subscribe({
         next: (res: any) => {
+          this.isLoading
           console.log(res);
           this.newUser.email = '';
           this.newUser.password = '';

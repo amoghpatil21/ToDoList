@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   User:any=[];
+  isLoading=false;
  constructor(private http:HttpClient,private router: Router){
 
  }
@@ -18,14 +19,17 @@ export class LoginComponent {
 
  }
  login(){
+  this.isLoading=true;
   this.http.post('http://localhost:3000/user/login', this.user).subscribe({
         next: (res: any) => {
+          this.isLoading=false
           console.log(res);
           this.user.email = '';
           this.user.password = '';
           
         },
         error: (err) => {
+          this.isLoading=false
           console.log(err);
         },
       })
